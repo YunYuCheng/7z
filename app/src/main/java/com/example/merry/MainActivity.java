@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
     private final static long smallsize=1024*10;
 
 
+
     private ProgressBar progress;
     private Button start;
     private Button back;
@@ -89,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
 
         progress=(ProgressBar)findViewById(R.id.process);
         start=(Button)findViewById(R.id.start);
